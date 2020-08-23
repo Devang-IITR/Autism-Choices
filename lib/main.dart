@@ -62,7 +62,13 @@ class HomePage extends StatelessWidget {
                       icon: Icon(
                         Icons.book,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DictionaryRoute()),
+                        );
+                      },
                       iconSize: 85.0,
                     ),
                     Text(
@@ -83,7 +89,13 @@ class HomePage extends StatelessWidget {
                       icon: Icon(
                         Icons.settings,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SettingsRoute()),
+                        );
+                      },
                       iconSize: 85.0,
                     ),
                     Text(
@@ -104,5 +116,71 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class DictionaryRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Dictionary',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          backgroundColor: Colors.white,
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: IconButton(
+                icon: Icon(
+                  Home.slides,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SlidesRoute()),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: IconButton(
+                icon: Icon(
+                  Icons.settings,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SettingsRoute()),
+                  );
+                },
+              ),
+            ),
+          ],
+          actionsIconTheme: IconThemeData(
+            color: Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SettingsRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp();
+  }
+}
+
+class SlidesRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp();
   }
 }
