@@ -1,4 +1,4 @@
-# autism_choices
+# Choices
 
 Educational app for autistic children.
 
